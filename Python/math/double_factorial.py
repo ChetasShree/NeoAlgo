@@ -3,7 +3,7 @@
 
 def double_fact_i(n):   # iterative implementation
     ans = 1
-    for i in range(n, 1, -2):
+    for i in range(n, -1, -2):
         ans *= i
     return ans
 
@@ -15,7 +15,7 @@ def double_fact_r(n):          # recursive implementation
 
 
 if __name__ == "__main__":
-    n = input("enter number")
+    n = int(input("enter number: "))
     print("Answer using Iterative method: " + str(double_fact_i(n)))
     print("Answer using recursive method: " + str(double_fact_r(n)))
 

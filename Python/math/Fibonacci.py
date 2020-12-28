@@ -13,11 +13,29 @@ def fibonaccinumber(n):
     1 1 2 3 5 8 13 21 34 55
 
     """
-    a, b = 0, 1
-    if n < 1:
-        return
-    for x in range(0, n):
-        print (b, end=' ')
-        a, b = b, a + b
-n = int(input())
-(fibonaccinumber(n))
+    
+    if n<0:
+        print("Incorrect input")    
+
+    elif n==0:
+        return 0
+    
+    elif n==1:
+        return 1
+
+    else:
+        n1 , n2 =1,1
+        count = 1
+        while count < n: 
+            print(n1 , end = ' ')       
+            nth = n1 + n2
+            # update values
+            n1 = n2
+            n2 = nth
+            count += 1            
+        return n1
+
+    
+
+n = int(input(">>"))
+print(fibonaccinumber(n))

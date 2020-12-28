@@ -20,7 +20,7 @@ def area_square(side_length):
     >>> area_square(10)
     100
     """
-    return side_length * side_length
+    return side_length **2
 
 
 def area_triangle(length, breadth):
@@ -72,27 +72,24 @@ def main():
         print("4. Parallelogram")
         print("5. Trapezium")
         print("6. Circle")
-        choice = int(input())
-        if(choice == 1):
-            print("Enter sides of rectangle:", end=" ")
-            l, b = input().split()
-            l = int(l)
+        choice = int(input(">>"))
+        if(choice == 1):     
+            print("Enter base and height of rectangle:", end=" ")
+            b, h = input().split()
             b = int(b)
-            print("Rectangle with sides "+str(l)+" and "+str(b)+" is:", end="")
-            print(str(area_rectangle(l, b)))
-            print("you wnat to continue (1/0)", end=" ")
-            again_choice = int(input())
-            if(again_choice):
+            h = int(h)
+            print("Rectangle with sides "+str(b)+" and "+str(h)+" is: ", end="")
+            print(str(area_rectangle(b, h)))            
+            again_choice = int(input("you want to continue (1/0): "))
+            if again_choice == 1:
                 again = True
             else:
                 again = False
         elif(choice == 2):
-            print("Enter side of square:", end=" ")
-            l = int(input())
-            print("Square with side "+str(l)+" is: "+str(area_square(l)))
-            print("you wnat to continue (1/0)", end=" ")
-            again_choice = int(input())
-            if(again_choice):
+            l = int(input("Enter side of square:"))
+            print("Square with side "+str(l)+" is: "+str(area_square(l)))            
+            again_choice = int(input("you want to continue (1/0): "))
+            if again_choice == 1:
                 again = True
             else:
                 again = False
@@ -101,10 +98,8 @@ def main():
             b, h = input().split()
             h = int(h)
             b = int(b)
-            print("Triangle of height "+str(h)+",base "+str(b)+" is:", end="")
-            print(str(area_triangle(h, b)))
-            print("you wnat to continue (1/0)", end=" ")
-            again_choice = int(input())
+            print("Triangle of height "+str(h)+",base "+str(b)+" is:" + str(area_triangle(h, b)))                      
+            again_choice = int(input("you want to continue (1/0): "))
             if(again_choice):
                 again = True
             else:
@@ -114,10 +109,8 @@ def main():
             b, h = input().split()
             h = int(h)
             b = int(b)
-            print("Parallelogram of height "+str(h)+",base "+str(b)":", end="")
-            print(str(area_parallelogram(h, b)))
-            print("you wnat to continue (1/0)", end=" ")
-            again_choice = int(input())
+            print(f"Parallelogram of height {str(h)} ,base {str(b)}: {area_parallelogram(h, b)}")            
+            again_choice = int(input("you want to continue (1/0): "))
             if(again_choice):
                 again = True
             else:
@@ -128,19 +121,17 @@ def main():
             b1 = int(b1)
             b2 = int(b2)
             h = int(h)
-            print("Trapezium with bases "+str(b1)+" and "+str(b2), end=" ")
-            print("and height "+str(h)+" is: "+str(area_trapezium(b1, b2, h)))
-            print("you wnat to continue (1/0)", end=" ")
+            print("Trapezium with bases "+str(b1)+" and "+str(b2) +"and height "+str(h)+" is: "+str(area_trapezium(b1, b2, h)))            
+            print("you want to continue (1/0)", end=" ")
             again_choice = int(input())
             if(again_choice):
                 again = True
             else:
                 again = False
-        elif(choice == 6):
-            print("Enter radius of circle:", end=" ")
-            r = int(input())
+        elif(choice == 6):            
+            r = int(input("Enter radius of circle: "))
             print("Circle with radius "+str(r)+" is: "+str(area_circle(r)))
-            print("you wnat to continue (1/0)", end=" ")
+            print("you want to continue (1/0)", end=" ")
             again_choice = int(input())
             if(again_choice):
                 again = True
